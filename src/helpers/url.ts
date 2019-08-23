@@ -12,7 +12,7 @@ function encode (val:string):string {
     .replace(/%5D/ig,']')
 }
 
-export function buildURL(url: string,params?:any):string {
+export function buildURL(url: string, params?: any): string {
     if(!params) {
         return url
     }
