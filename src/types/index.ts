@@ -1,5 +1,20 @@
+import { config } from "shelljs";
+import { request } from "https";
 
-export type Method = 'get' | 'GET' |'delete'|'DELETE'|'HEAD'|'head'|'options'| 'OPTIONS'|'post'|'POST'|'put'|'PUT'|'patch'|'PATCH'
+export type Method = 'get' 
+    | 'GET' 
+    |'delete'
+    |'DELETE'
+    |'HEAD'
+    |'head'
+    |'options'
+    | 'OPTIONS'
+    |'post'
+    |'POST'
+    |'put'
+    |'PUT'
+    |'patch'
+    |'PATCH'
 
 export interface AxiosRequestConfig{
     url: string
@@ -7,4 +22,18 @@ export interface AxiosRequestConfig{
     data?:any
     params?:any
     headers?:any
+    responseType?: XMLHttpRequestResponseType
+}
+
+export interface AxiosResponse{
+    data: any
+    status: number
+    statusText: string
+    headers: any
+    config: AxiosRequestConfig
+    request: any
+}
+
+export interface AxiosPromise extends Promise<AxiosResponse> {
+
 }
